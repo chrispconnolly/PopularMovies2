@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">PopularMovies</string>
+    <string name="action_sortbypopularity" translatable="false">Sort By Popularity</string>
+    <string name="action_sortbyrating" translatable="false">Sort By Rating</string>
+    <string name="action_favorites" translatable="false">Favorites</string>
+    <string name="reviews_text" translatable="false">Read Reviews</string>
+    <string name="trailers_text" translatable="false">Watch Trailers</string>
+
+    <string name="pref_sort_label" translatable="false">Sort by popularity or rating</string>
+    <string name="pref_sort_key" translatable="false">sort</string>
+    <string name="pref_sort_default" translatable="false">popularity</string>
+
+    <string name="favorite_off_text" translatable="false">Mark as Favorite</string>
+    <string name="favorite_on_text" translatable="false">Favorite Movie</string>
+    <string-array name="sort_array">
+        <item>popularity</item>
+        <item>rating</item>
+    </string-array>
+</resources>

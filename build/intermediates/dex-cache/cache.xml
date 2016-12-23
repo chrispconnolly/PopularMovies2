@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_4e123129a8f2b675b2057f2db83276dda70ee57c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_d7d1d39cf78b4b32340af366009a818af1aeb444.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_8b21ad432159538488bd1b7577adb42bd16906ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.1_bdb55cef3fa1f9bb2bf3cfb565926b0dbd7e5378.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.1_27b20c1d832da16a9de06697be548d8f2d821346.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.1_ce9a34ab205faaa917361a934906103e40b6f46a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_1abf4248025d41f3d8303e8ef8ac32043a2b80d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.1_570a1b0d79059f84e1fdf182aeb16bf20b4cce41.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_f2da6b8b31e2b9672f8181a189fae967f7ffe45a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.1_0001e5aa7e6229893b946bc88e71b03b8b2a636e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.1_ee689bf85eed37e365ac6b424a15b9edaf14a946.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.1_95393651816d6a108948f8d3e3606cec3f8da898.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.1_541ab893d7312f6f72944e2ec093bbcbd871e8c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.1_0097ec401444e6ee5672e802c384ffd1cc0334c1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.1_d6b2437c3cfb96ba7bbeb35f548982a154562489.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.1_093f884494cd770e3e00700642b48637db20a217.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_8e9237be0bfe467138867a625cf1231e0e63657a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_07d26b3bd2ec7df463b191dcd4a66c9497636473.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.1_90c66dffb81c866ee4d83003c637d3ccf24b95d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.1_9ad0e1b9928bcabfa4839df2327cbcac5a4a5168.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.1_1ad0b433e0c81a759185d339e63563089bf1dead.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_6b0770b4859e47c0d644da12e223489f7d41fbfc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.1_103e3872404c344c919122391870958893b06c64.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.1_8e2de095630958827941f9f07050748a9d7f0575.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.1_f9f6948385a4436d7da6fb8517672cf1e8cf9fe6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies2/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.1_49982d1a06b4be7b952e7e72935df0fc5b3b1918.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.1_7639dc6de23040ff72fff81882a76d4d2ae8ade4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_7d435445e5f885de2000a5e3431ab091a7e35500.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/Users/chrispconnolly/AndroidStudioProjects/PopularMovies/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_a9b8359a5e627f25112d0bc1f6a091fb5f87ca05.jar" />
+    </item>
+
+</items>

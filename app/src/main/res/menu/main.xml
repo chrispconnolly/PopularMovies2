@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/action_sortbypopularity" android:title="@string/action_sortbypopularity"
+        android:orderInCategory="100" app:showAsAction="ifRoom" />
+    <item android:id="@+id/action_sortbyrating" android:title="@string/action_sortbyrating"
+        android:orderInCategory="100" app:showAsAction="ifRoom" />
+    <item android:id="@+id/action_favorites" android:title="@string/action_favorites"
+        android:orderInCategory="100" app:showAsAction="ifRoom" />
+</menu>
