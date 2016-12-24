@@ -85,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(ArrayList<Bitmap> posterUrls) {
+            if(posterUrls == null) {
+                Toast.makeText(getApplication(), "There was an error.  Please check your network connectivity.", Toast.LENGTH_LONG).show();
+                return;
+            }
             mGridView.invalidateViews();
             mGridView.setAdapter(new ImageAdapter(getApplicationContext(), posterUrls));
         }
