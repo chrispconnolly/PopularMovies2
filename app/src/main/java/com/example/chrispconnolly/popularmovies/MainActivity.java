@@ -35,6 +35,10 @@ import static com.example.chrispconnolly.popularmovies.Utility.getMovieJson;
 public class MainActivity extends AppCompatActivity {
     private GridView mGridView;
     private JSONArray mMovieJsonArray;
+    private ImageAdapter mImageAdapter;
+    private String mMovieJsonString;
+    private ArrayList<Bitmap> mBitmapArrayList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mGridView = (GridView) findViewById(R.id.movie_gridview);
-        UpdateMovies();
+        if(savedInstanceState == null)
+            UpdateMovies();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -76,6 +81,32 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        state.putInt("gridViewScrollPosition", mGridView.getScrollY());
+        state.putString("mMoveJsonString", mMovieJsonString);
+        state.putParcelableArrayList("mBitmapArrayList", mBitmapArrayList);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle state) {
+        try {
+            super.onRestoreInstanceState(state);
+            mGridView.scrollTo(0, state.getInt("gridViewScrollPosition"));
+            mMovieJsonString = state.getString("mMoveJsonString");
+            mMovieJsonArray = new JSONArray(mMovieJsonString);
+            mBitmapArrayList = state.getParcelableArrayList("mBitmapArrayList");
+
+            mGridView.invalidateViews();
+            mImageAdapter = new ImageAdapter(getApplicationContext(), mBitmapArrayList);
+            mGridView.setAdapter(mImageAdapter);
+        }
+        catch (Exception exception){
+            Log.e("OnRestore error", exception.toString());
+        }
+    }
+
     private void UpdateMovies(){
         FetchMoviesTask fetchMoviesTask = new FetchMoviesTask();
         fetchMoviesTask.execute();
@@ -90,7 +121,8 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             mGridView.invalidateViews();
-            mGridView.setAdapter(new ImageAdapter(getApplicationContext(), posterUrls));
+            mImageAdapter = new ImageAdapter(getApplicationContext(), posterUrls);
+            mGridView.setAdapter(mImageAdapter);
         }
         @Override
         protected ArrayList<Bitmap> doInBackground(String... params) {
@@ -123,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
                     mMovieJsonArray = getMovieJson(builder.build().toString()).getJSONArray("results");
                 }
+                mMovieJsonString = mMovieJsonArray.toString();
                 String[] posterUrls = getMoviesDataFromJson();
                 ArrayList<Bitmap> bitmapArrayList = new ArrayList<Bitmap>();
                 for(String posterUrl : posterUrls)
@@ -165,9 +198,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    public class ImageAdapter extends BaseAdapter {
+    public class ImageAdapter extends BaseAdapter{
         private Context mContext;
-        private ArrayList<Bitmap> mBitmapArrayList;
 
         public ImageAdapter(Context c, ArrayList<Bitmap> bitmapArrayList) {
             mContext = c;

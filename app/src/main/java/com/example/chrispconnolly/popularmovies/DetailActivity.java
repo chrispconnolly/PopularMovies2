@@ -31,6 +31,9 @@ public class DetailActivity extends AppCompatActivity {
     private ArrayAdapter<String> mReviewsAdapter, mTrailersAdapter;
     private ArrayList<String> mReviewsList, mTrailersList;
     private ListView mReviewsListView, mTrailersListView;
+    private ScrollView mScrollView;
+    private String mReviewsJsonString, mTrailersJsonString;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +47,7 @@ public class DetailActivity extends AppCompatActivity {
             TextView plotTextView = (TextView) this.findViewById(R.id.plot_textview);
             TextView ratingTextView = (TextView) this.findViewById(R.id.rating_textview);
             TextView releaseDateTextView = (TextView) this.findViewById(R.id.releasedate_textview);
+            mScrollView = (ScrollView)this.findViewById(R.id.details_scrollview);
 
             JSONObject movieJson = new JSONObject(this.getIntent().getExtras().getString("movieJson"));
             mMovieId = movieJson.getString("id");
@@ -56,41 +60,68 @@ public class DetailActivity extends AppCompatActivity {
             ratingTextView.setText("User Rating: " + movieJson.getString("vote_average"));
             releaseDateTextView.setText("Release Date: " + movieJson.getString("release_date"));
 
-            //Load Trailers
-            mTrailersListView = (ListView) this.findViewById(R.id.trailers_listview);
-            mTrailersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("https://www.youtube.com/watch?v=" + mTrailersList.get(position)));
-                    startActivity(intent);
-                }
-            });
-            mTrailersAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
-            mTrailersListView.setAdapter(mTrailersAdapter);
-            FetchTrailersTask fetchMoviesTask = new FetchTrailersTask();
-            fetchMoviesTask.execute();
+                //Load Trailers
+                mTrailersListView = (ListView) this.findViewById(R.id.trailers_listview);
+                mTrailersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("https://www.youtube.com/watch?v=" + mTrailersList.get(position)));
+                        startActivity(intent);
+                    }
+                });
+                mTrailersAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+                mTrailersListView.setAdapter(mTrailersAdapter);
 
-            //Load Reviews
-            mReviewsListView = (ListView) this.findViewById(R.id.reviews_listview);
-            mReviewsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(DetailActivity.this);
-                    alertDialogBuilder.setMessage(mReviewsList.get(position));
-                    alertDialogBuilder.create().show();
-                }
-            });
-            mReviewsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
-            mReviewsListView.setAdapter(mReviewsAdapter);
-            FetchReviewsTask fetchReviewsTask = new FetchReviewsTask();
-            fetchReviewsTask.execute();
+                //Load Reviews
+                mReviewsListView = (ListView) this.findViewById(R.id.reviews_listview);
+                mReviewsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(DetailActivity.this);
+                        alertDialogBuilder.setMessage(mReviewsList.get(position));
+                        alertDialogBuilder.create().show();
+                    }
+                });
+                mReviewsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+                mReviewsListView.setAdapter(mReviewsAdapter);
 
-            ((ScrollView)this.findViewById(R.id.details_scrollview)).smoothScrollTo(0, 0);
+                ((ScrollView) this.findViewById(R.id.details_scrollview)).smoothScrollTo(0, 0);
+
+            if(savedInstanceState == null) {
+                FetchTrailersTask fetchMoviesTask = new FetchTrailersTask();
+                fetchMoviesTask.execute();
+                FetchReviewsTask fetchReviewsTask = new FetchReviewsTask();
+                fetchReviewsTask.execute();
+            }
         }
         catch (JSONException e)
         {
             Log.e("JSON Exception: ", e.toString());
+        }
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        state.putInt("scrollViewPosition", mScrollView.getScrollY());
+        state.putString("mTrailersJsonString", mTrailersJsonString);
+        state.putString("mReviewsJsonString", mReviewsJsonString);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle state) {
+        try {
+            super.onRestoreInstanceState(state);
+            mScrollView.scrollTo(0, state.getInt("scrollViewPosition"));
+            mTrailersJsonString = state.getString("mTrailersJsonString");
+            mReviewsJsonString = state.getString("mReviewsJsonString");
+            loadTrailerData(new JSONObject(mTrailersJsonString));
+            loadReviewData(new JSONObject(mReviewsJsonString));
+        }
+        catch (Exception exception) {
+            Log.e("OnRestore", exception.toString());
         }
     }
 
@@ -108,35 +139,62 @@ public class DetailActivity extends AppCompatActivity {
         preferencesEditor.commit();
     }
 
+
+    public void loadTrailerData(JSONObject movieTrailersJson){
+        try{
+            mTrailersList = new ArrayList<>();
+            mTrailersAdapter.clear();
+            JSONArray trailersJsonArray = movieTrailersJson.getJSONArray("results");
+            List<String> trailersList = new ArrayList<>();
+            for (int i = 0; i < trailersJsonArray.length(); i++) {
+                JSONObject jsonObject = trailersJsonArray.getJSONObject(i);
+                if(jsonObject.getString("site").equals("YouTube")){
+                    trailersList.add(jsonObject.getString("name"));
+                    mTrailersList.add(jsonObject.getString("key"));
+                }
+            }
+            for (String video : trailersList)
+                mTrailersAdapter.add("Watch " + video);
+            View listItem = mTrailersAdapter.getView(0, null, mTrailersListView);
+            listItem.measure(0, 0);
+            int height = listItem.getMeasuredHeight()*mTrailersAdapter.getCount();
+            mTrailersListView.getLayoutParams().height = height;
+        }
+        catch (Exception exception){
+            Log.e("JSON Exception", exception.toString());
+        }
+    }
+
+    public void loadReviewData(JSONObject movieReviewsJson){
+        try {
+            mReviewsList = new ArrayList<>();
+            mReviewsAdapter.clear();
+            JSONArray reviewsJsonArray = movieReviewsJson.getJSONArray("results");
+            List<String> reviewsList = new ArrayList<>();
+            for (int i = 0; i < reviewsJsonArray.length(); i++) {
+                JSONObject jsonObject = reviewsJsonArray.getJSONObject(i);
+                reviewsList.add(jsonObject.getString("author"));
+                mReviewsList.add(jsonObject.getString("content"));
+            }
+            for (String author : reviewsList)
+                mReviewsAdapter.add("Read a review by " + author);
+            View listItem = mReviewsAdapter.getView(0, null, mReviewsListView);
+            listItem.measure(0, 0);
+            int height = listItem.getMeasuredHeight()*mReviewsAdapter.getCount();
+            mReviewsListView.getLayoutParams().height = height;
+        }
+        catch (Exception exception){
+            Log.e("JSON Exception", exception.toString());
+        }
+    }
+
     public class FetchTrailersTask extends AsyncTask<String, Void, JSONObject> {
 
         @Override
         protected void onPostExecute(JSONObject movieTrailersJson) {
-            //Load into ListView
-            try{
-                System.out.println(movieTrailersJson);
-                mTrailersList = new ArrayList<>();
-                mTrailersAdapter.clear();
-                JSONArray trailersJsonArray = movieTrailersJson.getJSONArray("results");
-                List<String> trailersList = new ArrayList<>();
-                for (int i = 0; i < trailersJsonArray.length(); i++) {
-                    JSONObject jsonObject = trailersJsonArray.getJSONObject(i);
-                    if(jsonObject.getString("site").equals("YouTube")){
-                        trailersList.add(jsonObject.getString("name"));
-                        mTrailersList.add(jsonObject.getString("key"));
-                    }
-                }
-                for (String video : trailersList)
-                    mTrailersAdapter.add("Watch " + video);
-                View listItem = mTrailersAdapter.getView(0, null, mTrailersListView);
-                listItem.measure(0, 0);
-                int height = listItem.getMeasuredHeight()*mTrailersAdapter.getCount();
-                mTrailersListView.getLayoutParams().height = height;
-            }
-            catch (Exception exception){
-                Log.e("JSON Exception", exception.toString());
-            }
+            loadTrailerData(movieTrailersJson);
         }
+
         @Override
         protected JSONObject doInBackground(String... params) {
             Uri.Builder builder = new Uri.Builder();
@@ -147,7 +205,9 @@ public class DetailActivity extends AppCompatActivity {
                     .appendPath(mMovieId)
                     .appendPath("videos")
                     .appendQueryParameter("api_key", BuildConfig.THE_MOVIE_DATABASE_API_KEY);
-            return Utility.getMovieJson(builder.build().toString());
+            JSONObject trailersJson = Utility.getMovieJson(builder.build().toString());
+            mTrailersJsonString = trailersJson.toString();
+            return trailersJson;
         }
     }
 
@@ -155,26 +215,7 @@ public class DetailActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(JSONObject movieReviewsJson) {
-            try {
-                mReviewsList = new ArrayList<>();
-                mReviewsAdapter.clear();
-                JSONArray reviewsJsonArray = movieReviewsJson.getJSONArray("results");
-                List<String> reviewsList = new ArrayList<>();
-                for (int i = 0; i < reviewsJsonArray.length(); i++) {
-                    JSONObject jsonObject = reviewsJsonArray.getJSONObject(i);
-                    reviewsList.add(jsonObject.getString("author"));
-                    mReviewsList.add(jsonObject.getString("content"));
-                }
-                for (String author : reviewsList)
-                    mReviewsAdapter.add("Read a review by " + author);
-                View listItem = mReviewsAdapter.getView(0, null, mReviewsListView);
-                listItem.measure(0, 0);
-                int height = listItem.getMeasuredHeight()*mReviewsAdapter.getCount();
-                mReviewsListView.getLayoutParams().height = height;
-            }
-            catch (Exception exception){
-                Log.e("JSON Exception", exception.toString());
-            }
+            loadReviewData(movieReviewsJson);
         }
         @Override
         protected JSONObject doInBackground(String... params) {
@@ -186,7 +227,9 @@ public class DetailActivity extends AppCompatActivity {
                     .appendPath(mMovieId)
                     .appendPath("reviews")
                     .appendQueryParameter("api_key", BuildConfig.THE_MOVIE_DATABASE_API_KEY);
-            return Utility.getMovieJson(builder.build().toString());
+            JSONObject reviewsJson = Utility.getMovieJson(builder.build().toString());
+            mReviewsJsonString = reviewsJson.toString();
+            return reviewsJson;
         }
     }
 
